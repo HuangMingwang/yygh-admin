@@ -39,6 +39,9 @@ git clone https://github.com/PanJiaChen/vue-admin-template.git
 # Install dependencies
 npm install
 
+#解决node-sass问题
+npm i node-sass --sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
+
 # 建议不要用cnpm  安装有各种诡异的bug 可以通过如下操作解决npm速度慢的问题
 #http://139.198.165.238:32607/
 npm install --registry=https://registry.npm.taobao.org

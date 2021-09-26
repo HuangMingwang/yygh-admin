@@ -33,8 +33,8 @@ pipeline {
             agent none
             steps {
                 container('nodejs') {
-                    sh 'ls yygh-admin/'
-                    sh 'docker build -t yygh-admin:latest -f yygh-admin/Dockerfile  ./yygh-admin/'
+                    sh 'ls'
+                    sh 'docker build -t yygh-admin:latest -f Dockerfile  .'
                 }
 
             }
@@ -58,7 +58,7 @@ pipeline {
         stage('部署到dev环境') {
             agent none
             steps {
-                kubernetesDeploy(configs: 'yygh-admin/deploy/**', enableConfigSubstitution: true, kubeconfigId: "$KUBECONFIG_CREDENTIAL_ID")
+                kubernetesDeploy(configs: 'deploy/**', enableConfigSubstitution: true, kubeconfigId: "$KUBECONFIG_CREDENTIAL_ID")
             }
         }
 
