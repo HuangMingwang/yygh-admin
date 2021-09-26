@@ -21,8 +21,9 @@ pipeline {
             agent none
             steps {
                 container('nodejs') {
-                    sh 'ls'
                     sh 'npm install --registry=https://registry.npm.taobao.org'
+                    sh 'npm run build'
+                    sh 'ls'
                 }
 
             }
