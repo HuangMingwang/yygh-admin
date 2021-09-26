@@ -46,6 +46,7 @@ npm i node-sass --sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
 #http://139.198.165.238:32607/
 npm install --registry=https://registry.npm.taobao.org
 
+## 测试代码改变
 # Serve with hot reload at localhost:9528
 npm run dev
 
