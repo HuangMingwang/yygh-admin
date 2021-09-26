@@ -44,7 +44,7 @@ pipeline {
         stage('推送镜像') {
             agent none
             steps {
-                container('maven') {
+                container('nodejs') {
                     withCredentials([usernamePassword(credentialsId : 'aliyun-docker-registry' ,usernameVariable : 'DOCKER_USER_VAR' ,passwordVariable : 'DOCKER_PWD_VAR' ,)]) {
                         sh 'echo "$DOCKER_PWD_VAR" | docker login $REGISTRY -u "$DOCKER_USER_VAR" --password-stdin'
                         sh 'docker tag yygh-admin:latest $REGISTRY/$DOCKERHUB_NAMESPACE/yygh-admin:SNAPSHOT-$BUILD_NUMBER'
