@@ -60,7 +60,8 @@ spec:
       port: 80
       protocol: TCP
       targetPort: 80
+      nodePort: 32248
   selector:
     app: yygh-admin
   sessionAffinity: None
-  type: ClusterIP
+  type: NodePort
