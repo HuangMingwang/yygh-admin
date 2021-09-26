@@ -21,6 +21,7 @@ pipeline {
             agent none
             steps {
                 container('nodejs') {
+                    sh 'npm i node-sass --sass_binary_site=https://npm.taobao.org/mirrors/node-sass/'
                     sh 'npm install --registry=https://registry.npm.taobao.org'
                     sh 'npm run build'
                     sh 'ls'
