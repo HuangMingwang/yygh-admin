@@ -10,7 +10,7 @@ pipeline {
             agent none
             steps {
                 container('nodejs') {
-                    git(url: 'https://gitee.com/leifengyang/yygh-admin.git', credentialsId: 'gitee-id', branch: 'master', changelog: true, poll: false)
+                    git(url: 'https://github.com/HuangMingwang/yygh-admin.git', credentialsId: 'github-id', branch: 'master', changelog: true, poll: false)
                     sh 'ls -al'
                 }
 
@@ -68,7 +68,7 @@ pipeline {
         stage('发送确认邮件') {
             agent none
             steps {
-                mail(to: '17512080612@163.com', subject: 'yygh-admin构建结果', body: "构建成功了  $BUILD_NUMBER")
+                mail(to: '1125385880@163.com', subject: 'yygh-admin构建结果', body: "构建成功了  $BUILD_NUMBER")
             }
         }
 
@@ -78,9 +78,9 @@ pipeline {
         GITHUB_CREDENTIAL_ID = 'github-id'
         KUBECONFIG_CREDENTIAL_ID = 'demo-kubeconfig'
         REGISTRY = 'registry.cn-hangzhou.aliyuncs.com'
-        DOCKERHUB_NAMESPACE = 'lfy_hello'
+        DOCKERHUB_NAMESPACE = 'yc_hospital'
         GITHUB_ACCOUNT = 'kubesphere'
         APP_NAME = 'devops-java-sample'
-        ALIYUNHUB_NAMESPACE = 'lfy_hello'
+        ALIYUNHUB_NAMESPACE = 'yc_hospital'
     }
 }

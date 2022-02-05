@@ -4,7 +4,7 @@ metadata:
   labels:
     app: yygh-admin
   name: yygh-admin
-  namespace: his   #一定要写名称空间
+  namespace: hospital   #一定要写名称空间
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
@@ -53,7 +53,7 @@ metadata:
   labels:
     app: yygh-admin
   name: yygh-admin
-  namespace: his
+  namespace: hospital
 spec:
   ports:
     - name: http
